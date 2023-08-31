@@ -40,7 +40,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void keyboard_post_init_user(void) {
   rgblight_disable_noeeprom();
-  digitizer_in_range_on();
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -73,6 +72,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return true; // Process all other keycodes normally
         }
         if (record->event.pressed) { // Do something when pressed
+            digitizer_in_range_on();
             digitizer_set_position(x, y);
         }
         return false; // Skip all further processing of this key

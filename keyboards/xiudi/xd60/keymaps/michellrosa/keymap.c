@@ -45,28 +45,86 @@ void keyboard_post_init_user(void) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (layer_state_is(2)) {
         float x = 1;
-        float y = 1 - 0.1;
+        float y = 0;
         switch (keycode) {
             case KC_Q:
+            case KC_A:
+            case KC_Z:
                 x -= 0.1;
             case KC_W:
+            case KC_S:
+            case KC_X:
                 x -= 0.1;
             case KC_E:
+            case KC_D:
+            case KC_C:
                 x -= 0.1;
             case KC_R:
+            case KC_F:
+            case KC_V:
                 x -= 0.1;
             case KC_T:
+            case KC_G:
+            case KC_B:
                 x -= 0.1;
             case KC_Y:
+            case KC_H:
+            case KC_N:
                 x -= 0.1;
             case KC_U:
+            case KC_J:
+            case KC_M:
                 x -= 0.1;
             case KC_I:
+            case KC_K:
+            case KC_COMM:
                 x -= 0.1;
             case KC_O:
+            case KC_L:
+            case KC_DOT:
                 x -= 0.1;
             case KC_P:
+            case KC_SCLN:
+            case KC_SLSH:
                 x -= 0.1;
+                break;
+            default:
+                return true; // Process all other keycodes normally
+        }
+        switch (keycode) {
+            case KC_Q:
+            case KC_W:
+            case KC_E:
+            case KC_R:
+            case KC_T:
+            case KC_Y:
+            case KC_U:
+            case KC_I:
+            case KC_O:
+            case KC_P:
+                y += 0.1;
+            case KC_A:
+            case KC_S:
+            case KC_D:
+            case KC_F:
+            case KC_G:
+            case KC_H:
+            case KC_J:
+            case KC_K:
+            case KC_L:
+            case KC_SCLN:
+                y += 0.1;
+            case KC_Z:
+            case KC_X:
+            case KC_C:
+            case KC_V:
+            case KC_B:
+            case KC_N:
+            case KC_M:
+            case KC_COMM:
+            case KC_DOT:
+            case KC_SLSH:
+                y += 0.1;
                 break;
             default:
                 return true; // Process all other keycodes normally

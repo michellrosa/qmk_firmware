@@ -1,11 +1,5 @@
+#include "keycodes.h"
 
-#if 1
-#define ROW1 0
-#define ROW2 20
-#define ROW3 40
-#define ROW4 60
-#define ROW_END 80
-#endif
 const int row_count = 4;
 
 static float screen_init_x = 1.0f;
@@ -18,13 +12,13 @@ static float current_y = 1.0f;
 //static int zoom_level = 0;
 
 static int getRow(uint16_t keycode) {
-    if ((keycode >= ROW1) && (keycode < ROW2)) {
+    if ((keycode >= MCKC_R1) && (keycode < MCKC_R2)) {
         return 1;
-    } else if ((keycode >= ROW2) && (keycode < ROW3)) {
+    } else if ((keycode >= MCKC_R2) && (keycode < MCKC_R3)) {
         return 2;
-    } else if ((keycode >= ROW3) && (keycode < ROW4)) {
+    } else if ((keycode >= MCKC_R3) && (keycode < MCKC_R4)) {
         return 3;
-    } else if ((keycode >= ROW4) && (keycode < ROW_END)) {
+    } else if ((keycode >= MCKC_R4) && (keycode < MCKC_END)) {
         return 4;
     } else {
         return 0;

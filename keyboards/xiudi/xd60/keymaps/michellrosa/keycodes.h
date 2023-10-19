@@ -6,7 +6,7 @@
 enum {
     CUSTOM_KEYCODE_START = SAFE_RANGE,
 
-    #include "custom_mouse_keycodes.h"
+    #include "custom_mouse_keycodes.h"
 
     CUSTOM_KEYCODE_END
 };

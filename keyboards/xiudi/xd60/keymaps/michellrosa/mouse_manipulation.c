@@ -25,7 +25,7 @@ static int getRow(uint16_t keycode) {
     }
 }
 
-static bool getYposition(uint16_t keycode, float &y_pos, int zoom_level) {
+/*static*/ bool getYposition(uint16_t keycode, float &y_pos, int zoom_level) {
     int row = getRow(keycode);
     if (row > 0) {
         float line_height = (screen_init_y - screen_end_y) / row_count;
